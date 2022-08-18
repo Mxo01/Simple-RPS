@@ -6,70 +6,70 @@ userPoints = 0
 computerPoints = 0
 
 # Possibili scelte dell'utente
-user_choices = ["C", "F", "S", "c", "s", "f"]
+user_choices = ["P", "S", "R", "p", "s", "r"]
 # Possibili scelte del computer
-computer_choices = ["C", "F", "S"]
+computer_choices = ["P", "S", "R"]
 
 while(True):
 
   # Mostro chi ha vinto
   if (userPoints == 3):
-    print("\nCongratulazioni, hai vinto la partita :) ")
+    print("\nCongratulations, you won the game :) ")
     break
   if (computerPoints == 3):
-    print("\nPeccato, il computer ha vinto :( ")
+    print("\nToo bad, the computer won :( ")
     break
 
   # Messaggio di inizio del gioco
-  print("\nCarta, Forbice, Sasso...")
+  print("\nRock, Paper, Scissor...")
 
   # Scelta dell'utente
-  inp = input("Scegli tra [C]arta, [F]orbice o [S]asso: ")
-  if (inp == 'C' or inp == 'c'):
-    userChoice = 'Carta'
+  inp = input("Choose between [R]ock, [P]aper or [S]cissor: ")
+  if (inp == 'P' or inp == 'p'):
+    userChoice = 'Paper'
+  if (inp == 'R' or inp == 'r'):
+    userChoice = 'Rock'
   if (inp == 'S' or inp == 's'):
-    userChoice = 'Sasso'
-  if (inp == 'F' or inp == 'f'):
-    userChoice = 'Forbice'
+    userChoice = 'Scissor'
 
   # Se l'utente fa una scelta non valida
   if not inp in user_choices:
-    print("Perfavore inserisci una scelta valida...")
+    print("Please enter a valid choice ...")
     continue
 
   # Mostro cosa ha scelto l'utente
-  print("Hai scelto: " + userChoice)
+  print("You chose: " + userChoice)
 
   # Scelta del computer
   cmp = random.choice(computer_choices)
-  if (cmp == 'C' or cmp == 'c'):
-    computerChoice = 'Carta'
+  if (cmp == 'P' or cmp == 'p'):
+    computerChoice = 'Paper'
+  if (cmp == 'R' or cmp == 'r'):
+    computerChoice = 'Rock'
   if (cmp == 'S' or cmp == 's'):
-    computerChoice = 'Sasso'
-  if (cmp == 'F' or cmp == 'f'):
-    computerChoice = 'Forbice'
+    computerChoice = 'Scissor'
   
   # Mostro cosa ha scelto il computer
-  print("Il computer ha scelto: " + computerChoice)
+  print("Computer chose: " + computerChoice)
 
   if cmp == inp.upper():
-    print("Pareggio! ")
+    print("Tie! ")
 
-  elif cmp == 'S' and inp.upper() == 'F':
-    print("Sasso batte forbici, Ho vinto! ")
+  elif cmp == 'R' and inp.upper() == 'S':
+    print("Rock beats scissors, I won! ")
     computerPoints+=1
     continue
 
-  elif cmp == 'F' and inp.upper() == 'C':
-    print("Forbici batte carta, Ho vinto! ")
+  elif cmp == 'S' and inp.upper() == 'P':
+    print("Scissors beats paper, I won! ")
     computerPoints+=1
     continue
 
-  elif cmp == 'C' and inp.upper() == 'S':
-    print("Carta batte sasso, Ho vinto! ")
+  elif cmp == 'P' and inp.upper() == 'R':
+    print("Paper beats rock, I won! ")
     computerPoints+=1
     continue
 
   else:
-    print("Hai vinto!")
+    print("You won!")
     userPoints+=1
