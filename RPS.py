@@ -7,8 +7,10 @@ computerPoints = 0
 
 # Possibili scelte dell'utente
 user_choices = ["P", "S", "R", "p", "s", "r"]
+userChoice = ''
 # Possibili scelte del computer
 computer_choices = ["P", "S", "R"]
+computerChoice = ''
 
 while(True):
 
